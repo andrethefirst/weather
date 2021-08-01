@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const Dotenv = require('dotenv-webpack');
+const DotenvWebpackPlugin = require('dotenv-webpack');
 
 module.exports = {
     entry: '', //fuill in entry point
@@ -19,7 +20,8 @@ module.exports = {
         title: '', //fill in title
         template: '', //fill in where you want it to end up
         inject: 'body'
-      })
+      }),
+      new Dotenv()
     ],
     module: {
       rules: [
